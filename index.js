@@ -2,7 +2,7 @@
 
 var osgi = require('./osgi.js');
 var path = require('path');
-var replacer = require('./replacer.js');
+var replacer = require('./replacer');
 
 var frontendTmpSrcDir = osgi.frontendTmpSrcDir();
 var soyDir = osgi.soyDir();
@@ -10,13 +10,14 @@ var soyJSDir = osgi.soyJSDir();
 
 var modules = [];
 
+var auiNodePath = path.resolve() + '/node_modules/alloy-ui/build';
+var liferayMock = path.resolve() + '/node_modules/liferay-forms-alloy-config';
+
 var preprocessors = {};
 
 preprocessors['/**/*.js'] = ['replacer'];
-preprocessors['src/mocks/*.js'] = ['replacer'];
-preprocessors['src/test/**/*.js'] = ['commonjs'];
-
-var auiNodePath = path.resolve() + '/node_modules/alloy-ui/build';
+preprocessors[liferayMock + '/mocks/*.js'] = ['replacer'];
+preprocessors['src/testFrontend/*.js'] = ['commonjs'];
 
 module.exports = {
 	addModule: function(dependency) {
@@ -56,11 +57,7 @@ module.exports = {
 				browsers: ['Chrome'],
 				files: this.files.concat(this.includeAUIFiles()).concat(modules),
 				frameworks: ['chai', 'commonjs', 'mocha', 'sinon'],
-				preprocessors: {
-					'/**/*.js': ['replacer'],
-					'src/mocks/*.js': ['replacer'],
-					'src/test/**/*.js': ['commonjs']
-				},
+				preprocessors: preprocessors,
 				replacerPreprocessor: {
 					replacer: replacer.replaceModulePath
 				},
@@ -108,7 +105,7 @@ module.exports = {
 	files: [
 		auiNodePath + '/aui/aui.js',
 		frontendTmpSrcDir + '/loader/loader.js',
-		'src/mocks/*.js',
+		liferayMock + '/mocks/*.js',
 		soyJSDir + '/config.js',
 		soyDir + '/classes/META-INF/resources/soyutils.js'
 	]
