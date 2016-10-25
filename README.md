@@ -1,4 +1,4 @@
-Liferay Forms Alloy Config
+Liferay Karma Alloy Config
 ==========================
 
-Liferay portal's default configuration to forms alloy components for Karma testes.
+Liferay portal's default karma config for alloy components.

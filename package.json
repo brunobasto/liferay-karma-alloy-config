@@ -1,17 +1,16 @@
 {
-  "name": "liferay-forms-alloy-config",
-  "version": "0.0.5",
-  "description": "Liferay portal's default configuration to forms alloy components for Karma testes",
+  "name": "liferay-karma-alloy-config",
+  "version": "0.0.12",
+  "description": "Liferay portal's karma default configuration for alloy components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/diogo-lins/liferay-forms-alloy-config"
+    "url": "https://github.com/brunobasto/liferay-karma-alloy-config"
   },
   "main": "index.js",
   "keywords": [
-    "karma",
-    "liferay",
     "alloy",
-    "forms"
+    "karma",
+    "liferay"
   ],
   "author": {
     "name": "Diogo Lins",
@@ -21,7 +20,6 @@
     "alloy-ui": "^3.1.0-deprecated.1",
     "chai": "^3.5.0",
     "glob": "^4.4.0",
-    "gulp": "^3.9.0",
     "istanbul": "^0.3.17",
     "karma-chai": "^0.1.0",
     "karma-commonjs": "0.0.13",
@@ -30,7 +28,6 @@
     "karma-replacer-preprocessor": "0.0.1",
     "karma-sinon": "^1.0.4",
     "karma-threshold-reporter": "^0.1.15",
-    "liferay-forms-gulp-tasks": "^0.0.8",
     "mocha": "^2.2.5",
     "open": "0.0.5",
     "ps-tree": "^1.0.0",
