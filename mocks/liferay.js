@@ -14,8 +14,8 @@
 		},
 
 		ThemeDisplay: {
-			getLanguageId: sinon.stub().returns('en_US'),
-			getDefaultLanguageId: sinon.stub().returns('en_US')
+			getDefaultLanguageId: sinon.stub().returns('en_US'),
+			getLanguageId: sinon.stub().returns('en_US')
 		},
 
 		Util: {
