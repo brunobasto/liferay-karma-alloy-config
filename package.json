@@ -1,6 +1,6 @@
 {
   "name": "liferay-karma-alloy-config",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Liferay portal's karma default configuration for alloy components",
   "repository": {
     "type": "git",
