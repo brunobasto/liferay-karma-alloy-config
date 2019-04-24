@@ -3,8 +3,8 @@
 var karmaReplacerPreprocessor = require('karma-replacer-preprocessor');
 var path = require('path');
 
-var alloyPath = path.resolve() + '/node_modules/alloy-ui/build';
-var configPath = path.resolve() + '/node_modules/liferay-karma-alloy-config';
+var alloyPath = path.dirname(require.resolve('alloy-ui/package.json')) + '/build';
+var configPath = path.dirname(require.resolve('liferay-karma-alloy-config/package.json'));
 
 var baseFiles = [
 	{
